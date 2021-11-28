@@ -17,13 +17,13 @@ from mail import Mail
 def check_dates():
     ais_portal_username = os.getenv('ais_portal_username')
     ais_portal_password = os.getenv('ais_portal_password')
-    web_driver_exec_path = os.getenv('web_driver_exec_path')
+    chrome_web_driver_exec_path = os.getenv('chrome_web_driver_exec_path')
     locations_to_check = ['Vancouver', 'Ottawa', 'Calgary']
     user_email = os.getenv('user_email')
     email_subject = 'Visa date available'
     ais_url = "https://ais.usvisa-info.com/en-ca/niv/users/sign_in"
 
-    driver = webdriver.Chrome(executable_path=web_driver_exec_path)
+    driver = webdriver.Chrome(executable_path=chrome_web_driver_exec_path)
     actions = ActionChains(driver)
 
     driver.get(ais_url)
